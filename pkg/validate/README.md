@@ -1,6 +1,6 @@
 ## Validation utils
 
-Utility for validating string fields on structs using reflection and returning readable errors.
+Utility for validating string fields on structs, using reflection, which return readable errors.
 
 ### Validation features
 
