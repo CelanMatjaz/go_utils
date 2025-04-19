@@ -25,7 +25,12 @@ func Validate(value any) []string {
 			continue
 		}
 
-		errors = append(errors, validateField(field, fieldType.Name, tag)...)
+		fieldName := fieldType.Tag.Get("json")
+		if fieldName == "" {
+			fieldName = fieldType.Name
+		}
+
+		errors = append(errors, validateField(field, fieldName, tag)...)
 	}
 
 	return errors
